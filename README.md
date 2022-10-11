@@ -11,6 +11,7 @@ Connect the ESP32 to your computer via micro-USB and then run the following:
 ```sh
 git clone https://github.com/lemariva/micropython-camera-driver
 cd micropython-camera-driver/firmware
+pip install esptool
 esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
 esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 micropython_camera_feeeb5ea3_esp32_idf4_4.bin
 ```
@@ -26,4 +27,9 @@ Download this code from the aforementioned repository by running the following c
 ```sh
 git clone https://github.com/lemariva/uPyCam
 cd uPyCam
+```
+Then run the following to upload python code:
+```sh
+pip install ampy-adafruit
+ampy --port COM4 --baud 115200 put {FILE
 ```
